@@ -9,16 +9,11 @@ diesel_price = 3.21
 
 diesel_mpd = miles_per_dollar(diesel_price, 35)	
 gas_mpd = miles_per_dollar(gas_price, 29)
-print("D_mpd=" + str(diesel_mpd))
-print("G_mpd=" + str(gas_mpd))
 
 diesel_efficiency = cost_efficiency(diesel_mpd, gas_mpd)
 gasoline_efficiency = cost_efficiency(gas_mpd, diesel_mpd)
-print("D_E=%" + str(diesel_efficiency))
-print("G_E=%" + str(gasoline_efficiency))
 
 cost_efficiency_value = min(diesel_efficiency, gasoline_efficiency)
-print("CEV=%" + str(cost_efficiency_value))
 
 if (diesel_efficiency > gasoline_efficiency):
 	print("Gasoline is currently " + str(cost_efficiency(diesel_mpd, gas_mpd)) + "% more cost efficient than diesel fuel.") 
